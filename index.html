@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="sketch">
+<head>
+	<meta charset="UTF-8">
+	<title>shape</title>
+	<link rel="stylesheet" href="css/index.css">
+	<script src="js/angular.js"></script>
+	<script src="js/index.js"></script>
+</head>
+<body ng-controller="shController">
+	<div class="left">
+		<ul>
+			<li ng-repeat="(key, value) in tools" ng-class="{active:value==state.tool}" ng-click="state.tool = value">
+				<span ng-bind="value"></span>
+			</li>
+		</ul>
+		<ul ng-show="state.tool != 'erase' && state.tool != 'select' ">
+			<li ng-class="{active:state.type=='fill'}" ng-click="state.type='fill'">Fill</li>	
+			<li><input type="color" ng-model="state.fillStyle"></li>
+			<li ng-class="{active:state.type=='stroke'}" ng-click="state.type='stroke'">Stroke</li>	
+			<li><input type="color" ng-model="state.strokeStyle"></li>
+			<li>LineWidth</li>
+			<li><input type="range" min="1" max="10" step="1" ng-model="state.lineWidth" ng-change="console()"></li>
+		</ul>
+		<ul>
+			<li ng-click="newCanvas()">new</li>
+			<li ng-click="save()">save</li>
+			<li ng-Mouseup="undo($event)">undo</li>
+		</ul>
+	</div>
+	<div class="right" ng-click="">
+		<canvas id="canvas" ng-Mousedown="mousedown($event)" width="{{canvasWH.width}}" height="{{canvasWH.height}}"></canvas>
+	</div>
+</body>
+</html>
