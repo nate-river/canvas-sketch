@@ -1,46 +1,54 @@
 body{
 	margin:0;
+	font-family: Arial;
+	background: url(../imgs/packed-4.png);
 }
-ul,li{
-	margin:0;
-	padding:0;
-	list-style-type: none;
+#controls{
+	width:300px;
+	position: absolute;
+  box-sizing: border-box;
+  padding: 80px;
+	top:0;
+	bottom:0;
+	background: #383836;
+	color:white;
 }
-*{
-	cursor:default;
+#drawregion{
+	position: absolute;
+	left:300px;
+	right:0;
+	top:0;
+	bottom:0;
+  min-width: 800px;
 }
-.active{
-	color:#fa2;
+a{
+  color: white;
+  text-decoration: none;
 }
 #canvas{
-	border:1px solid black;
-	position: absolute;
-	top:50%;
-	left:50%;
-	margin-top:-300px;
-	margin-left:-300px;
+	box-shadow: 0 0 1px black;
+	display: block;
+	margin:20px auto;
 }
-.left{
-	position: absolute;
-	top:0;
-	bottom:0;
-	width:300px;
-	background: #333;
-	color:white;
+.active{
+	color:orange;
 }
-.right{
-	position: absolute;
-	top:0;
-	left:300px;
-	bottom:0;
-	right:0;
-	background: url(../imgs/packed-4.png);
-	color:white;
+input[type=color]{
+  display: block;
+  width: 60px;
+  height: 30px;
+  border-radius: 50%;
+  margin:5px 0;
+  border:1px solid #383836;
+  outline: none;
+  border-image: none;
+  background-color: #383836;
 }
-
-.left ul{
-	padding:40px 0 20px 80px;
+hr{
+  border:none;
+  border-top: 1px solid white;
+  margin:20px 0;
 }
-.left li{
-	padding:3px 0;
+*{
+	cursor:pointer;
 }
